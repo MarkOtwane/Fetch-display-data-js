@@ -2,6 +2,10 @@ const main = document.getElementById("main");
 const all = document.getElementById("all");
 const active = document.getElementById("active");
 const inactive = document.getElementById("inactive");
+// Loading all the cards
+window.onload = function(){
+    filterAll(content);
+}
 
 const content = [
     {
@@ -114,7 +118,7 @@ const content = [
     }
 ];
 // create a function to filter active extensions
-function filterActive(extension){
+function filterActive(extension){//parameter  we use to access data in the array
     main.innerHTML = '';
     const activeExtensions = extension.filter((extensions)=>{
         return extensions.status === true;
@@ -126,8 +130,10 @@ function filterActive(extension){
             div.innerHTML = `
                 <h1>${extension.name}</h1>
                 <p>${extension.description}</p>
+                <div class = "bottom">
                 <button>Remove</button>
                 <img src="${extension.icon}">
+                </div>
             `
             main.appendChild(div)
             //looping then map then in a div
@@ -148,11 +154,13 @@ function filterInActive(extension){
         //loop through the active
         activeExtensions.forEach(extension => {
             const div = document.createElement('div');
-            div.innerHTML = `
+            div.innerHTML= `
                 <h1>${extension.name}</h1>
                 <p>${extension.description}</p>
+                <div class = "bottom">
                 <button>Remove</button>
                 <img src="${extension.icon}">
+                </div>
             `
             main.appendChild(div)
             //looping then map then in a div
@@ -176,8 +184,10 @@ function filterAll(extension){
             div.innerHTML = `
                 <h1>${extension.name}</h1>
                 <p>${extension.description}</p>
+                <div class = "bottom">
                 <button>Remove</button>
                 <img src="${extension.icon}">
+                </div>
             `
             main.appendChild(div)
             //looping then map then in a div
