@@ -126,7 +126,7 @@ function filterActive(extension){
             div.innerHTML = `
                 <h1>${extension.name}</h1>
                 <p>${extension.description}</p>
-                <button>${extension.button}</button>
+                <button>Remove</button>
                 <img src="${extension.icon}">
             `
             main.appendChild(div)
